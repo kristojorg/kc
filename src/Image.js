@@ -26,9 +26,51 @@ It will also handle image load errors too!
 import React from 'react';
 import classnames from 'classnames';
 
-import './Image.css';
+// import './Image.css';
 import AspectRatio from './AspectRatio';
 
+
+const styleString = `
+  .image-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  .fadeImageIn {
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .imageLoaded {
+    opacity: 1;
+  }
+
+  .image-cover {
+    object-fit: cover;
+    height: 100%;
+    position: static;
+  }
+
+  .image-contain {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    position: static;
+  }
+`;
 
 export default class Image extends React.PureComponent {
 
@@ -60,7 +102,7 @@ export default class Image extends React.PureComponent {
         backgroundColor: height && width && backgroundColor,
         height: '100%',
         width: '100%',
-      }
+      },
     }
 
     // if we want to contain, maintain aspect ratio of image.
@@ -70,6 +112,7 @@ export default class Image extends React.PureComponent {
           height={height}
           width={width}
         >
+          <style dangerouslySetInnerHTML={{__html:styleString}} />
           <div style={IMG.contain} className={className}>
             <img
               alt={alt}
@@ -94,6 +137,7 @@ export default class Image extends React.PureComponent {
 
     return (
       <div style={IMG.contain} className={className}>
+        <style dangerouslySetInnerHTML={{__html:styleString}} />
         <img
           alt={alt}
           className={
