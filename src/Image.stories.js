@@ -46,8 +46,8 @@ storiesOf('Image', module)
     <div style={{width:400,height:400}} onClick={linkTo('Image','Unloaded.Cover')}>
       <Image
         src={testURL}
-        width={1818}
-        height={1228}
+        // width={1818}
+        // height={1228}
         display="cover"
       />
     </div>
@@ -56,8 +56,8 @@ storiesOf('Image', module)
     <div style={{width:400,height:400}} onClick={linkTo('Image','Loaded.Cover')} >
       <Image
         src={null}
-        width={1818}
-        height={1228}
+        // width={1818}
+        // height={1228}
         display="cover"
       />
     </div>

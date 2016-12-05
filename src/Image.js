@@ -93,12 +93,19 @@ export default class Image extends React.PureComponent {
     })
   }
 
+  getBackgroundColor = () => {
+    const {display, backgroundColor, height, width} = this.props;
+    if (display === 'contain' && height && width) return backgroundColor;
+    if (display === 'cover') return backgroundColor;
+    return null;
+  }
+
   render() {
     const {display, src, fade, width, height, alt, className, backgroundColor} = this.props;
 
     const IMG = {
       contain: {
-        backgroundColor: height && width && backgroundColor,
+        backgroundColor: this.getBackgroundColor(),
         height: '100%',
         width: '100%',
       },
