@@ -26,7 +26,6 @@ It will also handle image load errors too!
 import React from 'react';
 import classnames from 'classnames';
 
-// import './Image.css';
 import AspectRatio from './AspectRatio';
 
 
