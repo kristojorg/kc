@@ -1,2 +1,4 @@
-export Image from './Image';
-export AspectRatio from './AspectRatio';
+import Image from './Image';
+import AspectRatio from './AspectRatio';
+
+export {Image, AspectRatio};
