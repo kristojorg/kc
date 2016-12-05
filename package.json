@@ -17,7 +17,9 @@
     "start": "nwb serve-react-demo",
     "test": "nwb test",
     "test:coverage": "nwb test --coverage",
-    "test:watch": "nwb test --server"
+    "test:watch": "nwb test --server",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {},
   "peerDependencies": {
@@ -26,7 +28,8 @@
   "devDependencies": {
     "nwb": "0.12.x",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "@kadira/storybook": "^2.21.0"
   },
   "author": "",
   "homepage": "",
