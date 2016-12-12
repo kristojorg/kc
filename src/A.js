@@ -28,7 +28,7 @@ const A = (
 
   const hoverStyle = hoverLine ?
   `
-    borderBottom: ${borderBottom}
+    border-bottom: ${borderBottom}
     box-shadow: inset 0 -4px 0 ${color};
   ` : ``;
 
