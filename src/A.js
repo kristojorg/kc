@@ -47,7 +47,10 @@ const A = (
   return (
     <span className="a154">
       <style dangerouslySetInnerHTML={{__html:style}}/>
-      <a className={cn}>
+      <a
+        className={cn}
+        href={to}
+      >
         <span className={className}>{children}</span>
       </a>
     </span>
