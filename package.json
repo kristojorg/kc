@@ -1,6 +1,6 @@
 {
   "name": "@kristojorg/kc",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "kc React component",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",

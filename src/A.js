@@ -26,27 +26,27 @@ const A = (
 
   // const boxShadow = `inset 0 -4px 0 ${color};`;
 
-  const hoverStyle = hoverLine ?
-  `
-    border-bottom: ${borderBottom}
-    box-shadow: inset 0 -4px 0 ${color};
-  ` : ``;
 
   const style = `
-    .a154 a {
-      border-bottom: ${unHoveredBorder}
+    .a154 .unHoverLine {
+      border-bottom: ${borderBottom}
       box-shadow: inset 0 -0px 0 ${color};
       cursor: pointer;
     }
-    .a154 a:hover {
-      ${hoverStyle}
+    .a154 .hoverLine:hover {
+      cursor: pointer;
+      border-bottom: ${borderBottom}
+      box-shadow: inset 0 -4px 0 ${color};
     }
   `;
+
+  let cn = unHoverLine ? 'unHoverLine ' : '';
+  if (hoverLine) cn += 'hoverLine'
 
   return (
     <span className="a154">
       <style dangerouslySetInnerHTML={{__html:style}}/>
-      <a>
+      <a className={cn}>
         {children}
       </a>
     </span>
