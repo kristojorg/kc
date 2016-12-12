@@ -100,6 +100,10 @@ export default class Image extends React.PureComponent {
     return null;
   }
 
+  componentDidMount = () => {
+    if (this.imageNode.complete) this.onImageLoad();
+  }
+
   render() {
     const {display, src, fade, width, height, alt, className, backgroundColor} = this.props;
 
@@ -132,6 +136,7 @@ export default class Image extends React.PureComponent {
                 )}
               src={src}
               onLoad={this.onImageLoad}
+              ref={(img) => { this.imageNode = img; }}
             />
           </div>
         </AspectRatio>
@@ -156,6 +161,7 @@ export default class Image extends React.PureComponent {
             )}
           src={src}
           onLoad={this.onImageLoad}
+          ref={(img) => { this.imageNode = img; }}
         />
       </div>
     )
