@@ -16,10 +16,11 @@ type aProps = {
   thickness: number,
   children: any,
   color: string,
+  className: string
 };
 
 const A = (
-  {to, unHoverLine = true, hoverLine = true, thickness, children, color = '#b4e7f8', ...rest} : aProps
+  {to, unHoverLine = true, hoverLine = true, thickness, children, color = '#b4e7f8', className, ...rest} : aProps
 ) => {
   const borderBottom = `3px solid ${color};`
   const unHoveredBorder = unHoverLine ? borderBottom : `none;`;
@@ -47,7 +48,7 @@ const A = (
     <span className="a154">
       <style dangerouslySetInnerHTML={{__html:style}}/>
       <a className={cn}>
-        {children}
+        <span className={className}>{children}</span>
       </a>
     </span>
   )
