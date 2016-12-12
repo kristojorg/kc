@@ -33,18 +33,18 @@ const A = (
   ` : ``;
 
   const style = `
-    a {
+    .a154 a {
       border-bottom: ${unHoveredBorder}
       box-shadow: inset 0 -0px 0 ${color};
       cursor: pointer;
     }
-    a:hover {
+    .a154 a:hover {
       ${hoverStyle}
     }
   `;
 
   return (
-    <span>
+    <span className="a154">
       <style dangerouslySetInnerHTML={{__html:style}}/>
       <a>
         {children}
