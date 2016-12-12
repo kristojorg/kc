@@ -11,24 +11,35 @@ import React from 'react'
 
 type aProps = {
   to : string,
-  underline: bool,
+  unHoverLine: bool,
+  hoverLine: bool,
   thickness: number,
   children: any,
   color: string,
 };
 
 const A = (
-  {to, underline, thickness, children, color = '#b4e7f8', ...rest} : aProps
+  {to, unHoverLine = true, hoverLine = true, thickness, children, color = '#b4e7f8', ...rest} : aProps
 ) => {
+  const borderBottom = `3px solid ${color};`
+  const unHoveredBorder = unHoverLine ? borderBottom : `none;`;
+
+  // const boxShadow = `inset 0 -4px 0 ${color};`;
+
+  const hoverStyle = hoverLine ?
+  `
+    borderBottom: ${borderBottom}
+    box-shadow: inset 0 -4px 0 ${color};
+  ` : ``;
 
   const style = `
     a {
-      border-bottom: 3px solid ${color};
+      border-bottom: ${unHoveredBorder}
       box-shadow: inset 0 -0px 0 ${color};
       cursor: pointer;
     }
     a:hover {
-      box-shadow: inset 0 -4px 0 ${color};
+      ${hoverStyle}
     }
   `;
 
