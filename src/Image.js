@@ -71,8 +71,12 @@ const styleString = `
   }
 `;
 
-let client = false;
-if (typeof window === 'undefined') client = true;
+// let client = true;
+const client = !!(
+      typeof window !== 'undefined' &&
+      window.document &&
+      window.document.createElement
+);
 
 export default class Image extends React.PureComponent {
 
