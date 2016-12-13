@@ -71,6 +71,9 @@ const styleString = `
   }
 `;
 
+let client = false;
+if (window) client = true;
+
 export default class Image extends React.PureComponent {
 
   static defaultProps = {
@@ -83,7 +86,7 @@ export default class Image extends React.PureComponent {
   constructor(props){
     super(props)
     this.state = {
-      loaded: false,
+      loaded: client ? false : true,
     }
   }
 
@@ -101,6 +104,7 @@ export default class Image extends React.PureComponent {
   }
 
   componentDidMount = () => {
+    console.log('THIS', this);
     if (this.imageNode.complete) this.onImageLoad();
   }
 
