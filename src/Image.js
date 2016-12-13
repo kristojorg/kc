@@ -72,7 +72,7 @@ const styleString = `
 `;
 
 let client = false;
-if (window) client = true;
+if (typeof window === 'undefined') client = true;
 
 export default class Image extends React.PureComponent {
 
