@@ -51,6 +51,7 @@ const A = (
         <a
           className={cn}
           href={to}
+          {...rest}
         >
           <span className={className}>{children}</span>
         </a> :

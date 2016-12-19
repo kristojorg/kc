@@ -108,8 +108,11 @@ export default class Image extends React.PureComponent {
   }
 
   componentDidMount = () => {
-    console.log('THIS', this);
-    if (this.imageNode.complete) this.onImageLoad();
+    console.log('THIS', this.imageNode.complete);
+    if (this.imageNode.complete) {
+      console.log('COMPLETE');
+      this.onImageLoad();
+    }
   }
 
   render() {
